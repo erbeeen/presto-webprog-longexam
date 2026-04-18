@@ -1,39 +1,43 @@
 import Button from '../../components/Button';
 import logo from '../../assets/img/nubdexchange_logo.png';
+import jacketImg from "../../assets/img/merch/JACKETNU2.webp";
+import shirtImg from "../../assets/img/merch/nu-shirt1.webp";
+import ballerImg from "../../assets/img/merch/NUBaller.webp";
+import lanyardImg from "../../assets/img/merch/NULanyard.webp";
 
 const AboutPage = () => {
   return (
     <div className="flex w-full flex-col gap-6">
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="border-b-2 border-zinc-900 bg-primary px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="rounded-3xl border-2 border-dashed border-zinc-300 bg-zinc-100 p-6">
-            <div className="flex min-h-72 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-              <img src={logo} alt="BulldogEx" className="h-32 w-32 rounded-full border-2 border-zinc-900 bg-zinc-50 object-contain" />
-            </div>
+          <div className="flex items-center justify-center rounded-3xl border-2 border-zinc-300 bg-zinc-100 p-6">
+            {/* <div className="flex min-h-72 items-center justify-center rounded-[1.25rem] bg-zinc-200"> */}
+              <img src={logo} alt="BulldogEx" className="object-contain" />
+            {/* </div> */}
           </div>
 
           <div>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-200">
               About Store
             </p>
-            <h1 className="max-w-xl text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl">
+            <h1 className="max-w-xl text-3xl font-bold leading-tight text-zinc-50 sm:text-4xl">
               A campus shop focused on useful products and simple ordering.
             </h1>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-zinc-600 sm:text-base">
+            <p className="mt-4 max-w-lg text-sm leading-7 text-zinc-200 sm:text-base">
               BulldogEx Shop keeps the low-fidelity layout system while presenting clear
               product categories, quick actions, and straightforward store information.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button to="/" variant="primary">
+              <Button to="/" variant="secondary">
                 Back Home
               </Button>
-              <Button to="/products">Open Products</Button>
+              <Button to="/products" variant='primary'>Open Products</Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="border-b-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="mb-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
             Store Overview
@@ -69,7 +73,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
@@ -101,25 +105,29 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+          <div className="rounded-3xl border-2 border-zinc-900 bg-primary p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-100">
               Category Grid
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                {/* <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" /> */}
+                <img src={jacketImg} alt="product category" className="object-cover rounded-xl"/>
               </div>
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                {/* <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" /> */}
+                <img src={shirtImg} alt="product category" className="object-cover rounded-xl"/>
               </div>
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                {/* <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" /> */}
+                <img src={lanyardImg} alt="product category" className="object-cover rounded-xl"/>
               </div>
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                {/* <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" /> */}
+                <img src={ballerImg} alt="product category" className="object-cover rounded-xl"/>
               </div>
             </div>
-            <Button to="/products" className="mt-5">View Products</Button>
+            <Button to="/products" className="mt-5" variant='primary'>View Products</Button>
           </div>
         </div>
       </section>

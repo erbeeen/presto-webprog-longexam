@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
+import { GoogleLogin } from '@react-oauth/google';
+import { FaApple } from "react-icons/fa";
 
 const inputClasses =
   'mt-2 w-full rounded-xl border border-zinc-300 bg-zinc-100 px-4 py-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-zinc-900 focus:bg-zinc-50';
@@ -59,12 +61,28 @@ const SignInPage = () => {
         </Button>
 
         <div className="grid gap-3 pt-2 sm:grid-cols-2">
-          <Button type="button" variant="secondary" className={actionButtonClassName}>
-            Log In with Google
-          </Button>
-          <Button type="button" variant="secondary" className={actionButtonClassName}>
-            Log In with Apple
-          </Button>
+          {/* <Button type="button" variant="secondary" className={actionButtonClassName}> */}
+          {/*   Log In with Google */}
+          {/* </Button> */}
+          <GoogleLogin
+            onSuccess={(credentialResponse) => console.log(credentialResponse)}
+            onError={() => console.error("Login failed")}
+            size='medium'
+            useOneTap
+          />
+
+          <button
+            className="bg-black text-[14px] text-white px-4 py-1 rounded-md flex items-center justify-center font-medium font-apple text-base active:bg-gray-800 transition-colors w-full max-w-xs hover:bg-gray-900"
+            style={{
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'
+            }}
+          >
+            <FaApple className="text-xl mr-2.5 " />
+            <span>Sign in with Apple</span>
+          </button>
+          {/* <Button type="button" variant="secondary" className={actionButtonClassName}> */}
+          {/*   Log In with Apple */}
+          {/* </Button> */}
         </div>
       </form>
 
